@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Order Confirmed - Saathwik's Book House</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body onload="loadConfirmation()">
+  <header class="site-header">
+    <div class="container nav">
+      <a href="index.html" class="logo">Saathwik's <span>Book House</span></a>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="catalog.html">Catalog</a>
+        <a href="cart.html">Cart <span class="badge" id="cart-count">0</span></a>
+        <a href="profile.html">Profile</a>
+        <a href="registration.html" id="register-link">Register</a>
+        <a href="login.html" id="login-link">Login</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="notice" id="notice">
+      <p id="notice-text"></p>
+      <a class="btn" id="notice-link" href="login.html"></a>
+    </div>
+
+    <div id="content">
+      <div class="box">
+        <h1>Order Confirmed</h1>
+        <p class="success">Thank you for shopping with us! Your payment was successful and your order has been placed.</p>
+        <p><b>Order ID:</b> <span id="order-id"></span></p>
+        <p><b>Customer Name:</b> <span id="order-name"></span></p>
+        <p><b>Order Date:</b> <span id="order-date"></span></p>
+
+        <table id="order-table">
+          <tr>
+            <th>Book</th>
+            <th>Quantity</th>
+            <th>Price (&#8377;)</th>
+            <th>Amount (&#8377;)</th>
+          </tr>
+        </table>
+
+        <h2>Total Amount: &#8377;<span id="order-total"></span></h2>
+        <a href="catalog.html" class="btn">Continue Shopping</a>
+      </div>
+    </div>
+  </main>
+</body>
+</html>

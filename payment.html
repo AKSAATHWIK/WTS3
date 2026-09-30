@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Payment - Saathwik's Book House</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body onload="loadPayment()">
+  <header class="site-header">
+    <div class="container nav">
+      <a href="index.html" class="logo">Saathwik's <span>Book House</span></a>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="catalog.html">Catalog</a>
+        <a href="cart.html">Cart <span class="badge" id="cart-count">0</span></a>
+        <a href="profile.html">Profile</a>
+        <a href="registration.html" id="register-link">Register</a>
+        <a href="login.html" id="login-link">Login</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="notice" id="notice">
+      <p id="notice-text"></p>
+      <a class="btn" id="notice-link" href="login.html"></a>
+    </div>
+
+    <div id="content">
+      <div class="form-box">
+        <h1>Payment</h1>
+        <p class="amount">Amount to pay: <b>&#8377;<span id="amount"></span></b></p>
+        <form onsubmit="pay(); return false;">
+          <div class="form-group">
+            <label for="cardName">Cardholder Name</label>
+            <input type="text" id="cardName">
+            <p class="error" id="cardNameError"></p>
+          </div>
+          <div class="form-group">
+            <label for="cardNumber">Card Number</label>
+            <input type="text" id="cardNumber" maxlength="16">
+            <p class="error" id="cardNumberError"></p>
+          </div>
+          <div class="form-group">
+            <label for="expiry">Expiry Date (MM/YY)</label>
+            <input type="text" id="expiry" maxlength="5" placeholder="MM/YY" oninput="formatExpiry()">
+            <p class="error" id="expiryError"></p>
+          </div>
+          <div class="form-group">
+            <label for="cvv">CVV</label>
+            <input type="password" id="cvv" maxlength="3">
+            <p class="error" id="cvvError"></p>
+          </div>
+          <button type="submit" class="btn" id="pay-btn">Pay Now</button>
+        </form>
+      </div>
+    </div>
+  </main>
+</body>
+</html>

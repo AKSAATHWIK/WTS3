@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Profile - Saathwik's Book House</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body onload="loadProfile()">
+  <header class="site-header">
+    <div class="container nav">
+      <a href="index.html" class="logo">Saathwik's <span>Book House</span></a>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="catalog.html">Catalog</a>
+        <a href="cart.html">Cart <span class="badge" id="cart-count">0</span></a>
+        <a href="profile.html">Profile</a>
+        <a href="registration.html" id="register-link">Register</a>
+        <a href="login.html" id="login-link">Login</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="notice" id="notice">
+      <p id="notice-text"></p>
+      <a class="btn" id="notice-link" href="login.html"></a>
+    </div>
+
+    <div id="content">
+      <div class="form-box">
+        <div id="profile-view">
+          <h1>My Profile</h1>
+          <p><b>Name:</b> <span id="view-name"></span></p>
+          <p><b>Email:</b> <span id="view-email"></span></p>
+          <p><b>Phone:</b> <span id="view-phone"></span></p>
+          <p><b>Address:</b> <span id="view-address"></span></p>
+          <p class="success" id="message"></p>
+          <button class="btn" onclick="editProfile()">Edit Profile</button>
+        </div>
+
+        <form id="profile-form" style="display: none;" onsubmit="saveProfile(); return false;">
+          <h1>Edit Profile</h1>
+          <div class="form-group">
+            <label for="name">Full Name</label>
+            <input type="text" id="name">
+            <p class="error" id="nameError"></p>
+          </div>
+          <div class="form-group">
+            <label for="phone">Phone Number</label>
+            <input type="text" id="phone">
+            <p class="error" id="phoneError"></p>
+          </div>
+          <div class="form-group">
+            <label for="address">Address</label>
+            <textarea id="address" rows="3"></textarea>
+            <p class="error" id="addressError"></p>
+          </div>
+          <button type="submit" class="btn">Save</button>
+          <button type="button" class="btn btn-grey" onclick="cancelEdit()">Cancel</button>
+        </form>
+      </div>
+    </div>
+  </main>
+</body>
+</html>

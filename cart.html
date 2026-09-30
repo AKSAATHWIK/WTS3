@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Cart - Saathwik's Book House</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body onload="loadCart()">
+  <header class="site-header">
+    <div class="container nav">
+      <a href="index.html" class="logo">Saathwik's <span>Book House</span></a>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="catalog.html">Catalog</a>
+        <a href="cart.html">Cart <span class="badge" id="cart-count">0</span></a>
+        <a href="profile.html">Profile</a>
+        <a href="registration.html" id="register-link">Register</a>
+        <a href="login.html" id="login-link">Login</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <h1>Shopping Cart</h1>
+    <div class="box">
+      <table id="cart-table">
+        <tr>
+          <th>Book</th>
+          <th>Price (&#8377;)</th>
+          <th>Quantity</th>
+          <th>Change</th>
+          <th>Subtotal (&#8377;)</th>
+          <th></th>
+        </tr>
+      </table>
+      <p class="empty" id="empty-message"></p>
+      <h2>Total: &#8377;<span id="total"></span></h2>
+      <button class="btn" onclick="checkout()">Proceed to Payment</button>
+    </div>
+  </main>
+</body>
+</html>

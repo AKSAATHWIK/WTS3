@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Home - Saathwik's Book House</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav">
+      <a href="index.html" class="logo">Saathwik's <span>Book House</span></a>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="catalog.html">Catalog</a>
+        <a href="cart.html">Cart <span class="badge" id="cart-count">0</span></a>
+        <a href="profile.html">Profile</a>
+        <a href="registration.html" id="register-link">Register</a>
+        <a href="login.html" id="login-link">Login</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="hero">
+    <div class="container">
+      <h1>Welcome to Saathwik's <span>Book House</span></h1>
+      <p>Find your next favourite book.</p>
+      <form class="search-bar" onsubmit="searchFromHome(); return false;">
+        <input type="text" id="home-search" placeholder="Search by title or author">
+        <button type="submit" class="btn">Search</button>
+      </form>
+    </div>
+  </div>
+
+  <main class="container">
+    <h2>Categories</h2>
+    <div class="category-list">
+      <a href="catalog.html" onclick="pickCategory('Fantasy')">Fantasy</a>
+      <a href="catalog.html" onclick="pickCategory('Fiction')">Fiction</a>
+      <a href="catalog.html" onclick="pickCategory('Self-Help')">Self-Help</a>
+      <a href="catalog.html" onclick="pickCategory('Classics')">Classics</a>
+      <a href="catalog.html" onclick="pickCategory('Non-Fiction')">Non-Fiction</a>
+      <a href="catalog.html" onclick="pickCategory('Programming')">Programming</a>
+    </div>
+
+    <h2>Featured Books</h2>
+    <div class="book-grid">
+      <div class="book-card">
+        <img src="https://m.media-amazon.com/images/I/81+s7KT1ZoL._SY522_.jpg" alt="Asteria's Call: Whispers of Destiny">
+        <p class="tag">Fantasy</p>
+        <h3>Asteria's Call: Whispers of Destiny</h3>
+        <p class="author">by A Krishna Saathwik</p>
+        <p class="price">&#8377;200</p>
+        <button class="btn" onclick="addToCart('Asteria\'s Call: Whispers of Destiny', 200, this)">Add to Cart</button>
+      </div>
+      <div class="book-card">
+        <img src="https://covers.openlibrary.org/b/id/9273734-L.jpg" alt="The Time Traveler's Wife">
+        <p class="tag">Fiction</p>
+        <h3>The Time Traveler's Wife</h3>
+        <p class="author">by Audrey Niffenegger</p>
+        <p class="price">&#8377;450</p>
+        <button class="btn" onclick="addToCart('The Time Traveler\'s Wife', 450, this)">Add to Cart</button>
+      </div>
+      <div class="book-card">
+        <img src="https://covers.openlibrary.org/b/id/7988607-L.jpg" alt="Deep Work">
+        <p class="tag">Self-Help</p>
+        <h3>Deep Work</h3>
+        <p class="author">by Cal Newport</p>
+        <p class="price">&#8377;450</p>
+        <button class="btn" onclick="addToCart('Deep Work', 450, this)">Add to Cart</button>
+      </div>
+      <div class="book-card">
+        <img src="https://covers.openlibrary.org/b/id/7981639-L.jpg" alt="Malgudi Days">
+        <p class="tag">Classics</p>
+        <h3>Malgudi Days</h3>
+        <p class="author">by R.K. Narayan</p>
+        <p class="price">&#8377;225</p>
+        <button class="btn" onclick="addToCart('Malgudi Days', 225, this)">Add to Cart</button>
+      </div>
+    </div>
+
+    <div class="view-all">
+      <a href="catalog.html" class="btn">View All Books</a>
+    </div>
+  </main>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Register - Saathwik's Book House</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav">
+      <a href="index.html" class="logo">Saathwik's <span>Book House</span></a>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="catalog.html">Catalog</a>
+        <a href="cart.html">Cart <span class="badge" id="cart-count">0</span></a>
+        <a href="profile.html">Profile</a>
+        <a href="registration.html" id="register-link">Register</a>
+        <a href="login.html" id="login-link">Login</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="form-box">
+      <h1>Register</h1>
+      <form onsubmit="register(); return false;">
+        <div class="form-group">
+          <label for="name">Full Name</label>
+          <input type="text" id="name">
+          <p class="error" id="nameError"></p>
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="text" id="email">
+          <p class="error" id="emailError"></p>
+        </div>
+        <div class="form-group">
+          <label for="phone">Phone Number</label>
+          <input type="text" id="phone">
+          <p class="error" id="phoneError"></p>
+        </div>
+        <div class="form-group">
+          <label for="address">Address</label>
+          <textarea id="address" rows="3"></textarea>
+          <p class="error" id="addressError"></p>
+        </div>
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" id="password">
+          <p class="error" id="passwordError"></p>
+        </div>
+        <div class="form-group">
+          <label for="confirmPassword">Confirm Password</label>
+          <input type="password" id="confirmPassword">
+          <p class="error" id="confirmError"></p>
+        </div>
+        <button type="submit" class="btn">Register</button>
+      </form>
+      <p class="form-link">Already have an account? <a href="login.html">Login here</a></p>
+    </div>
+  </main>
+</body>
+</html>

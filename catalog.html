@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Catalog - Saathwik's Book House</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body onload="loadCatalog()">
+  <header class="site-header">
+    <div class="container nav">
+      <a href="index.html" class="logo">Saathwik's <span>Book House</span></a>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="catalog.html">Catalog</a>
+        <a href="cart.html">Cart <span class="badge" id="cart-count">0</span></a>
+        <a href="profile.html">Profile</a>
+        <a href="registration.html" id="register-link">Register</a>
+        <a href="login.html" id="login-link">Login</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <h1>Books Catalog</h1>
+
+    <div class="filters">
+      <input type="text" id="search" placeholder="Search by title or author" oninput="filterBooks()">
+      <select id="category" onchange="filterBooks()">
+        <option>All</option>
+        <option>Fantasy</option>
+        <option>Fiction</option>
+        <option>Self-Help</option>
+        <option>Classics</option>
+        <option>Non-Fiction</option>
+        <option>Programming</option>
+      </select>
+    </div>
+
+    <div class="book-grid">
+      <div class="book-card">
+        <img src="https://m.media-amazon.com/images/I/81+s7KT1ZoL._SY522_.jpg" alt="Asteria's Call: Whispers of Destiny">
+        <p class="tag">Fantasy</p>
+        <h3>Asteria's Call: Whispers of Destiny</h3>
+        <p class="author">by A Krishna Saathwik</p>
+        <p class="price">&#8377;200</p>
+        <button class="btn" onclick="addToCart('Asteria\'s Call: Whispers of Destiny', 200, this)">Add to Cart</button>
+      </div>
+      <div class="book-card">
+        <img src="https://covers.openlibrary.org/b/id/8773134-L.jpg" alt="The Night Circus">
+        <p class="tag">Fantasy</p>
+        <h3>The Night Circus</h3>
+        <p class="author">by Erin Morgenstern</p>
+        <p class="price">&#8377;420</p>
+        <button class="btn" onclick="addToCart('The Night Circus', 420, this)">Add to Cart</button>
+      </div>
+      <div class="book-card">
+        <img src="https://covers.openlibrary.org/b/id/9273734-L.jpg" alt="The Time Traveler's Wife">
+        <p class="tag">Fiction</p>
+        <h3>The Time Traveler's Wife</h3>
+        <p class="author">by Audrey Niffenegger</p>
+        <p class="price">&#8377;450</p>
+        <button class="btn" onclick="addToCart('The Time Traveler\'s Wife', 450, this)">Add to Cart</button>
+      </div>
+      <div class="book-card">
+        <img src="https://covers.openlibrary.org/b/id/8794265-L.jpg" alt="Normal People">
+        <p class="tag">Fiction</p>
+        <h3>Normal People</h3>
+        <p class="author">by Sally Rooney</p>
+        <p class="price">&#8377;399</p>
+        <button class="btn" onclick="addToCart('Normal People', 399, this)">Add to Cart</button>
+      </div>
+      <div class="book-card">
+        <img src="https://covers.openlibrary.org/b/id/7988607-L.jpg" alt="Deep Work">
+        <p class="tag">Self-Help</p>
+        <h3>Deep Work</h3>
+        <p class="author">by Cal Newport</p>
+        <p class="price">&#8377;450</p>
+        <button class="btn" onclick="addToCart('Deep Work', 450, this)">Add to Cart</button>
+      </div>
+      <div class="book-card">
+        <img src="https://covers.openlibrary.org/b/id/7285986-L.jpg" alt="Essentialism">
+        <p class="tag">Self-Help</p>
+        <h3>Essentialism</h3>
+        <p class="author">by Greg McKeown</p>
+        <p class="price">&#8377;399</p>
+        <button class="btn" onclick="addToCart('Essentialism', 399, this)">Add to Cart</button>
+      </div>
+      <div class="book-card">
+        <img src="https://covers.openlibrary.org/b/id/7981639-L.jpg" alt="Malgudi Days">
+        <p class="tag">Classics</p>
+        <h3>Malgudi Days</h3>
+        <p class="author">by R.K. Narayan</p>
+        <p class="price">&#8377;225</p>
+        <button class="btn" onclick="addToCart('Malgudi Days', 225, this)">Add to Cart</button>
+      </div>
+      <div class="book-card">
+        <img src="https://covers.openlibrary.org/b/id/6562535-L.jpg" alt="Siddhartha">
+        <p class="tag">Classics</p>
+        <h3>Siddhartha</h3>
+        <p class="author">by Hermann Hesse</p>
+        <p class="price">&#8377;175</p>
+        <button class="btn" onclick="addToCart('Siddhartha', 175, this)">Add to Cart</button>
+      </div>
+      <div class="book-card">
+        <img src="https://covers.openlibrary.org/b/id/8294078-L.jpg" alt="Born a Crime">
+        <p class="tag">Non-Fiction</p>
+        <h3>Born a Crime</h3>
+        <p class="author">by Trevor Noah</p>
+        <p class="price">&#8377;399</p>
+        <button class="btn" onclick="addToCart('Born a Crime', 399, this)">Add to Cart</button>
+      </div>
+      <div class="book-card">
+        <img src="https://covers.openlibrary.org/b/id/9274698-L.jpg" alt="Surely You're Joking, Mr. Feynman!">
+        <p class="tag">Non-Fiction</p>
+        <h3>Surely You're Joking, Mr. Feynman!</h3>
+        <p class="author">by Richard P. Feynman</p>
+        <p class="price">&#8377;375</p>
+        <button class="btn" onclick="addToCart('Surely You\'re Joking, Mr. Feynman!', 375, this)">Add to Cart</button>
+      </div>
+      <div class="book-card">
+        <img src="https://covers.openlibrary.org/b/id/15110686-L.jpg" alt="Grokking Algorithms">
+        <p class="tag">Programming</p>
+        <h3>Grokking Algorithms</h3>
+        <p class="author">by Aditya Bhargava</p>
+        <p class="price">&#8377;699</p>
+        <button class="btn" onclick="addToCart('Grokking Algorithms', 699, this)">Add to Cart</button>
+      </div>
+      <div class="book-card">
+        <img src="https://covers.openlibrary.org/b/id/7363640-L.jpg" alt="Automate the Boring Stuff with Python">
+        <p class="tag">Programming</p>
+        <h3>Automate the Boring Stuff with Python</h3>
+        <p class="author">by Al Sweigart</p>
+        <p class="price">&#8377;750</p>
+        <button class="btn" onclick="addToCart('Automate the Boring Stuff with Python', 750, this)">Add to Cart</button>
+      </div>
+    </div>
+  </main>
+</body>
+</html>
